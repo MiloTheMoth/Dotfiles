@@ -1,5 +1,5 @@
-Dotfiles
-A place for me to put all my dotfiles
+# Dotfiles
+## A place for me to put all my dotfiles
 
 
 
