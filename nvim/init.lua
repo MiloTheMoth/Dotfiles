@@ -1,0 +1,127 @@
+-- Milo's NeoVim Config
+-- I'll try and keep things readable, but don't expect me to explain every line :/
+
+
+
+-- Lazy.nvim Setup
+
+--- Enabling Plugin Loader (Lazy.nvim)
+--- config: ~/.config/nvim/lua/config/lazy.lua
+--- plugins: ~/.config/nvim/lua/plugins/
+require("config.lazy")
+
+-- Import Plugins (each plugin is called "plugin.filename")
+require("lazy").setup({
+    spec = {
+        { import = "plugins.mason" },
+        { import = "plugins.nord-theme" },
+        { import = "plugins.lualine" },
+        { import = "plugins.telescope" },
+        { import = "plugins.trouble" },
+        { import = "plugins.whichkey" },
+        { import = 'plugins.lspconfig' }
+    },
+    -- set the colour scheme
+    install = { colorscheme = { "nord" } },
+    -- automatically check for plugin updates
+    checker = { enabled = true },
+})
+
+
+
+-- Mason Setup
+require("mason").setup()
+
+
+
+-- Lualine Setup
+--- This section is gonna be kinda massive and probably a bit confusing. Sorry in advance... :c
+require('lualine').setup {
+    options = {
+        icons_enabled = true,
+        theme = 'auto',
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
+        disabled_filetypes = {
+            statusline = {},
+            winbar = {},
+        },
+        ignore_focus = {},
+        always_divide_middle = true,
+        always_show_tabline = true,
+        globalstatus = false,
+        refresh = {
+            statusline = 1000,
+            tabline = 1000,
+            winbar = 1000,
+            refresh_time = 16, -- ~60fps
+            events = {
+                'WinEnter',
+                'BufEnter',
+                'BufWritePost',
+                'SessionLoadPost',
+                'FileChangedShellPost',
+                'VimResized',
+                'Filetype',
+                'CursorMoved',
+                'CursorMovedI',
+                'ModeChanged',
+            },
+        }
+    },
+    sections = {
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_c = { 'filename' },
+        lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' }
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
+        lualine_y = {},
+        lualine_z = {}
+    },
+    tabline = {},
+    winbar = {},
+    inactive_winbar = {},
+    extensions = {}
+}
+
+
+
+-- Telescope Setup
+
+--- Keybinds
+vim.keymap.set("n", "<space>ff", "<cmd>Telescope find_files<cr>", { desc = 'Telescope find files' })
+vim.keymap.set("n", "<space>fg", "<cmd>Telescope live_grep<cr>", { desc = 'Telescope live grep' })
+vim.keymap.set("n", "<space>fb", "<cmd>Telescope buffers<cr>", { desc = 'Telescope buffer search' })
+vim.keymap.set("n", "<space>fh", "<cmd>Telescope help_tags<cr>", { desc = 'Telescope help search' })
+
+--- Other settings
+require('telescope').setup {
+    defaults = {
+        mappings = {
+            i = {
+                ["<C-h>"] = "which_key"
+            }
+        }
+    },
+    pickers = {},
+    extensions = {}
+}
+
+
+
+-- Trouble Setup
+
+require('trouble').setup {}
+
+
+
+-- WhichKey Setup
+
+local wk = require("which-key")

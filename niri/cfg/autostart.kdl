@@ -1,0 +1,6 @@
+// ────────────── Startup Applications ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
+
+    spawn-sh-at-startup "noctalia" // Noctalia (the shell)
+    spawn-at-startup "vicinae" "server" // Vicinae launcher
+    spawn-at-startup "xwayland-satellite"

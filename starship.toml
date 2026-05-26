@@ -1,0 +1,134 @@
+# version: 1.0.0
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+continuation_prompt = "[▸▹ ](dimmed white)"
+
+format = """
+$os\
+$shlvl\
+$shell\
+$env_var\
+$jobs\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration\
+$line_break\
+$time\
+$character
+"""
+
+
+
+palette = 'nord'
+
+[palettes.nord]
+# https://www.nordtheme.com/docs/colors-and-palettes
+color_p1 = '#2e3440'
+color_p2 = '#3b4252'
+color_p3 = '#434c5e'
+color_p4 = '#4c566a'
+color_s1 = '#d8dee9'
+color_s2 = '#e5e9f0'
+color_s3 = '#eceff4'
+color_f1 = '#8fbcbb'
+color_f2 = '#88c0d0'
+color_f3 = '#81a1c1'
+color_f4 = '#5e81ac'
+color_a1 = '#bf616a'
+color_a2 = '#d08770'
+color_a3 = '#ebcb8b'
+color_a4 = '#a3be8c'
+color_a5 = '#b48ead'
+
+[os.symbols]
+Windows = " 󰍲 "
+Ubuntu = " 󰕈 "
+SUSE = "  "
+openSUSE = "  "
+Raspbian = "  "
+Mint = " 󰣭 "
+Macos = " 󰀵 "
+Linux = "  "
+Gentoo = " 󰣨 "
+Fedora = " 󰣛 "
+Alpine = "  "
+Android = "  "
+AOSC = "  "
+Arch = " 󰣇 "
+Artix = "  "
+EndeavourOS = "  "
+Garuda = "  "
+Manjaro = "  "
+CentOS = "  "
+Debian = " 󰣚 "
+Redhat = " 󱄛 "
+RedHatEnterprise = " 󱄛 "
+Pop = "  "
+Elementary = "  "
+NixOS = "  "
+Void = "  "
+Kali = "  "
+FreeBSD = "  "
+NetBSD = "  "
+OpenBSD = "  "
+Redox = " 󰀘 "
+
+
+
+[character]
+format = "$symbol "
+success_symbol = "[ :3 ->](bold color_f1)"
+error_symbol = "[ :c ->](bold color_a1)"
+
+[os]
+disabled = false
+style = "bold color_f4"
+
+[username]
+show_always = true
+style_user = "bold color_f2"
+style_root = "bold color_a5"
+format = "[$user]($style) "
+disabled = false
+
+[directory]
+home_symbol = " "
+format = '[$path]($style)[$read_only]($read_only_style)'
+style = 'bold color_a5'
+repo_root_style = 'bold color_a2'
+read_only = "  "
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[cmd_duration]
+format = "[  $duration](italic color_s3)"
+
+[git_branch]
+symbol = ""
+format = '[$symbol $branch ]($style)'
+style = "bold color_a2"
+
+[git_status]
+format = '[$all_status$ahead_behind]($style)'
+style = "bold color_a2"
+ahead = ">"
+behind = "<"
+diverged = "<|>"
+renamed = "r"
+deleted = "x"
+
+[time]
+disabled = false
+format = "[ $time]($style)"
+time_format = "%R"
+utc_time_offset = "local"
+style = "color_s1"
