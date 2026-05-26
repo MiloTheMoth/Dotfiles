@@ -17,9 +17,8 @@ require("lazy").setup({
         { import = "plugins.nord-theme" },
         { import = "plugins.lualine" },
         { import = "plugins.telescope" },
-        { import = "plugins.trouble" },
         { import = "plugins.whichkey" },
-        { import = 'plugins.lspconfig' }
+        { import = "plugins.lspconfig" }
     },
     -- set the colour scheme
     install = { colorscheme = { "nord" } },
@@ -118,7 +117,7 @@ require('telescope').setup {
 
 -- Trouble Setup
 
-require('trouble').setup {}
+
 
 
 
