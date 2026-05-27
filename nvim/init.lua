@@ -6,8 +6,8 @@
 -- Lazy.nvim Setup
 
 --- Enabling Plugin Loader (Lazy.nvim)
---- config: ~/.config/nvim/lua/config/lazy.lua
---- plugins: ~/.config/nvim/lua/plugins/
+--- config: ./nvim/lua/config/lazy.lua
+--- plugins: ./nvim/lua/plugins/
 require("config.lazy")
 
 -- Import Plugins (each plugin is called "plugin.filename")
@@ -18,7 +18,8 @@ require("lazy").setup({
         { import = "plugins.lualine" },
         { import = "plugins.telescope" },
         { import = "plugins.whichkey" },
-        { import = "plugins.lspconfig" }
+        { import = "plugins.lspconfig" },
+        { import = "plugins.blink" }
     },
     -- set the colour scheme
     install = { colorscheme = { "nord" } },
@@ -115,7 +116,8 @@ require('telescope').setup {
 
 
 
--- Trouble Setup
+-- Blink Setup
+--- Nothing here, all the options are in ./lua/plugins/blink.lua
 
 
 
