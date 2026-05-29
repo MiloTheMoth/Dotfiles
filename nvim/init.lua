@@ -1,5 +1,28 @@
 -- Milo's NeoVim Config
--- I'll try and keep things readable, but don't expect me to explain every line :/
+--- I'll try and keep things readable, but don't expect me to explain every line :/
+--- Thanks to catperson for helping me with some plugins and with setting up the repo :>
+
+
+
+-- Disabling netrw (apparently needed for nvim-tree to function :/)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+
+
+-- Keybinds
+
+--- Lazy
+vim.keymap.set("n", "<space>l", "<cmd>Lazy home<cr>", { desc = 'Open Lazy Menu' })
+
+--- Telescope
+vim.keymap.set("n", "<space>ff", "<cmd>Telescope find_files<cr>", { desc = 'Telescope find files' })
+vim.keymap.set("n", "<space>fg", "<cmd>Telescope live_grep<cr>", { desc = 'Telescope live grep' })
+vim.keymap.set("n", "<space>fb", "<cmd>Telescope buffers<cr>", { desc = 'Telescope buffer search' })
+vim.keymap.set("n", "<space>fh", "<cmd>Telescope help_tags<cr>", { desc = 'Telescope help search' })
+
+--- Nvim-Tree
+vim.keymap.set("n", "<space>f.", "<cmd>NvimTreeToggle<cr>", { desc = 'Toggle Nvim-Tree' })
 
 
 
@@ -16,6 +39,7 @@ require("lazy").setup({
         { import = "plugins.mason" },
         { import = "plugins.nord-theme" },
         { import = "plugins.lualine" },
+        { import = "plugins.nvim-tree" },
         { import = "plugins.telescope" },
         { import = "plugins.whichkey" },
         { import = "plugins.lspconfig" },
@@ -95,12 +119,6 @@ require('lualine').setup {
 
 -- Telescope Setup
 
---- Keybinds
-vim.keymap.set("n", "<space>ff", "<cmd>Telescope find_files<cr>", { desc = 'Telescope find files' })
-vim.keymap.set("n", "<space>fg", "<cmd>Telescope live_grep<cr>", { desc = 'Telescope live grep' })
-vim.keymap.set("n", "<space>fb", "<cmd>Telescope buffers<cr>", { desc = 'Telescope buffer search' })
-vim.keymap.set("n", "<space>fh", "<cmd>Telescope help_tags<cr>", { desc = 'Telescope help search' })
-
 --- Other settings
 require('telescope').setup {
     defaults = {
@@ -118,8 +136,6 @@ require('telescope').setup {
 
 -- Blink Setup
 --- Nothing here, all the options are in ./lua/plugins/blink.lua
-
-
 
 
 
