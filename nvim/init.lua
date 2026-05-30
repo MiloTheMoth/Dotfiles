@@ -1,6 +1,6 @@
 -- Milo's NeoVim Config
 --- I'll try and keep things readable, but don't expect me to explain every line :/
---- Thanks to catperson for helping me with some plugins and with setting up the repo :>
+--- Thanks to catperson for helping me with some plugin configs :>
 
 
 
