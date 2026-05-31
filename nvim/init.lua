@@ -9,11 +9,10 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 
-
 -- Keybinds
 
 --- Lazy
-vim.keymap.set("n", "<space>l", "<cmd>Lazy home<cr>", { desc = 'Open Lazy Menu' })
+vim.keymap.set("n", "<space>L", "<cmd>Lazy home<cr>", { desc = 'Open Lazy Menu' })
 
 --- Telescope
 vim.keymap.set("n", "<space>ff", "<cmd>Telescope find_files<cr>", { desc = 'Telescope find files' })
@@ -23,6 +22,12 @@ vim.keymap.set("n", "<space>fh", "<cmd>Telescope help_tags<cr>", { desc = 'Teles
 
 --- Nvim-Tree
 vim.keymap.set("n", "<space>f.", "<cmd>NvimTreeToggle<cr>", { desc = 'Toggle Nvim-Tree' })
+
+--- Barbar
+vim.keymap.set("n", "<C-b><left>", "<cmd>BufferPrevious<cr>", { desc = 'Focus Previous Buffer' })
+vim.keymap.set("n", "<C-b><right>", "<cmd>BufferNext<cr>", { desc = 'Focus Next Buffer' })
+vim.keymap.set("n", "<C-b><S-left>", "<cmd>BufferMovePrevious<cr>", { desc = 'Move Buffer Back' })
+vim.keymap.set("n", "<C-b><S-right>", "<cmd>BufferMoveNext<cr>", { desc = 'Move Buffer Forward' })
 
 
 
@@ -39,6 +44,7 @@ require("lazy").setup({
         { import = "plugins.mason" },
         { import = "plugins.nord-theme" },
         { import = "plugins.lualine" },
+	{ import = "plugins.barbar" },
         { import = "plugins.nvim-tree" },
         { import = "plugins.telescope" },
         { import = "plugins.whichkey" },
@@ -117,9 +123,13 @@ require('lualine').setup {
 
 
 
--- Telescope Setup
+-- Barbar Setup
+init = function() vim.g.barbar_auto_setup = false end,
 
---- Other settings
+
+
+
+-- Telescope Setup
 require('telescope').setup {
     defaults = {
         mappings = {
@@ -140,5 +150,4 @@ require('telescope').setup {
 
 
 -- WhichKey Setup
-
 local wk = require("which-key")
