@@ -11,8 +11,14 @@ vim.g.loaded_netrwPlugin = 1
 
 -- Keybinds
 
+--- WhichKey
+vim.keymap.set("n", "<C-h>", "<cmd>WhichKey<cr>")
+
 --- Lazy
-vim.keymap.set("n", "<space>L", "<cmd>Lazy home<cr>", { desc = 'Open Lazy Menu' })
+vim.keymap.set("n", "<A-l>h", "<cmd>Lazy home<cr>", { desc = 'Open Lazy Menu' })
+vim.keymap.set("n", "<A-l>s", "<cmd>Lazy sync<cr>", { desc = 'Sync Plugins (update, install, clean)' })
+
+
 
 --- Telescope
 vim.keymap.set("n", "<space>ff", "<cmd>Telescope find_files<cr>", { desc = 'Telescope find files' })
@@ -130,16 +136,20 @@ init = function() vim.g.barbar_auto_setup = false end,
 
 
 -- Telescope Setup
-require('telescope').setup {
-    defaults = {
-        mappings = {
-            i = {
-                ["<C-h>"] = "which_key"
-            }
-        }
-    },
-    pickers = {},
-    extensions = {}
+require('telescope').setup{
+  defaults = {
+    mappings = {
+      i = {
+	["<C-h>"] = "which_key"
+      }
+    }
+  },
+  pickers = {
+	
+  },
+  extensions = {
+	
+  }
 }
 
 
