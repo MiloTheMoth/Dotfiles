@@ -1,4 +1,4 @@
--- Milo's NeoVim Config
+--  __/Milo's NeoVim Config\__
 --- I'll try and keep things readable, but don't expect me to explain every line :/
 --- Thanks to catperson for helping me with some plugin configs :>
 
@@ -7,6 +7,24 @@
 -- Disabling netrw (apparently needed for nvim-tree to function :/)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+
+
+-- General Options
+
+--- Using system clipboard
+vim.opt.clipboard = "unnamedplus"
+
+--- Highlighting yanked (copied) text
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
+--- Enabling line numbers
+vim.opt.number = true
+
 
 
 -- Keybinds
@@ -44,7 +62,7 @@ vim.keymap.set("n", "<C-b><S-right>", "<cmd>BufferMoveNext<cr>", { desc = 'Move 
 --- plugins: ./nvim/lua/plugins/
 require("config.lazy")
 
--- Import Plugins (each plugin is called "plugin.filename")
+--- Import Plugins (each plugin is called "plugin.filename")
 require("lazy").setup({
     spec = {
         { import = "plugins.mason" },
@@ -57,9 +75,9 @@ require("lazy").setup({
         { import = "plugins.lspconfig" },
         { import = "plugins.blink" }
     },
-    -- set the colour scheme
+    --- set the colour scheme
     install = { colorscheme = { "nord" } },
-    -- automatically check for plugin updates
+    --- automatically check for plugin updates
     checker = { enabled = true },
 })
 

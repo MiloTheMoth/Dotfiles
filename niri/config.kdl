@@ -1,3 +1,7 @@
+//  __/Milo's Niri Config\__
+/// Based off of CachyOS's Niri Config, but tweaked a bit
+/// Uses Noctalia V5 for the shell and 
+
 include "./cfg/animation.kdl"
 include "./cfg/autostart.kdl"
 include "./cfg/keybinds.kdl"

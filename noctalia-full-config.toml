@@ -1,0 +1,476 @@
+[audio]
+enable_overdrive = false
+enable_sounds = true
+notification_sound = ""
+sound_volume = 0.5
+volume_change_sound = ""
+
+[backdrop]
+blur_intensity = 0.5
+enabled = false
+tint_intensity = 0.30000001192092896
+
+[bar]
+order = [ "default" ]
+
+    [bar.default]
+    auto_hide = false
+    background_opacity = 0.89999997615814209
+    border = "outline"
+    border_width = 0.0
+    capsule = false
+    capsule_fill = "surface_variant"
+    capsule_groups = []
+    capsule_opacity = 1.0
+    capsule_padding = 6.0
+    center = [ "active_window" ]
+    color = "primary"
+    contact_shadow = false
+    enabled = true
+    end = [ "notifications", "network", "temp", "cpu", "ram", "battery", "tray", "session" ]
+    font_weight = 500
+    margin_edge = 8
+    margin_ends = 140
+    padding = 2
+    position = "top"
+    radius = 16
+    radius_bottom_left = 16
+    radius_bottom_right = 16
+    radius_top_left = 16
+    radius_top_right = 16
+    reserve_space = true
+    scale = 1.0
+    shadow = true
+    start = [ "control-center", "clock", "workspaces" ]
+    thickness = 30
+    widget_spacing = 6
+
+[brightness]
+enable_ddcutil = false
+ignore_mmids = []
+
+[control_center]
+compact = true
+
+    [[control_center.shortcuts]]
+    type = "wifi"
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "mic_mute"
+
+    [[control_center.shortcuts]]
+    type = "notification"
+
+    [[control_center.shortcuts]]
+    type = "clipboard"
+
+    [[control_center.shortcuts]]
+    type = "power_profile"
+
+[desktop_widgets]
+enabled = true
+schema_version = 1
+widget_order = [ "desktop-widget-0000000000000001" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    cx = 959.99993896484375
+    cy = 1080.0
+    enabled = true
+    output = "eDP-1"
+    rotation = 0.0
+    scale = 5.8345990180969238
+    type = "audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        aspect_ratio = 4.7000002861022949
+        background = false
+        bands = 32
+        high_color = "secondary"
+        low_color = "secondary"
+        show_when_idle = true
+
+[dock]
+active_monitor_only = false
+active_opacity = 1.0
+active_scale = 1.0
+auto_hide = false
+background_opacity = 0.89999997615814209
+enabled = false
+icon_size = 48
+inactive_opacity = 0.85000002384185791
+inactive_scale = 0.85000002384185791
+item_spacing = 6
+launcher_icon = "grid-dots"
+launcher_position = "none"
+margin_edge = 8
+margin_ends = 0
+monitors = []
+padding = 8
+pinned = []
+position = "bottom"
+radius = 16
+radius_bottom_left = 16
+radius_bottom_right = 16
+radius_top_left = 16
+radius_top_right = 16
+reserve_space = false
+shadow = true
+show_dots = false
+show_instance_count = true
+show_running = true
+
+[hooks]
+battery_low_percent_threshold = 0
+battery_state_changed = []
+battery_under_threshold = []
+bluetooth_disabled = []
+bluetooth_enabled = []
+colors_changed = []
+logging_out = []
+power_profile_changed = []
+rebooting = []
+session_locked = []
+session_unlocked = []
+shutting_down = []
+started = []
+theme_mode_changed = []
+wallpaper_changed = []
+wifi_disabled = []
+wifi_enabled = []
+
+[idle]
+behavior_order = [ "lock", "screen-off", "suspend" ]
+pre_action_fade_seconds = 2.0
+
+    [idle.behavior.lock]
+    action = "lock"
+    command = ""
+    enabled = false
+    lock_before_suspend = true
+    resume_command = ""
+    timeout = 600
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    command = ""
+    enabled = false
+    lock_before_suspend = true
+    resume_command = ""
+    timeout = 660
+
+    [idle.behavior.suspend]
+    action = "suspend"
+    command = ""
+    enabled = false
+    lock_before_suspend = true
+    resume_command = ""
+    timeout = 900
+
+[keybinds]
+cancel = [ "Escape" ]
+down = [ "Down" ]
+left = [ "Left" ]
+right = [ "Right" ]
+up = [ "Up" ]
+validate = [ "Return", "KP_Enter" ]
+
+[nightlight]
+enabled = false
+force = false
+start_time = ""
+stop_time = ""
+temperature_day = 6500
+temperature_night = 4000
+use_weather_location = true
+
+[notification]
+background_opacity = 0.89999997615814209
+enable_daemon = true
+layer = "top"
+monitors = []
+offset_x = 20
+offset_y = 8
+position = "top_right"
+scale = 1.0
+
+[osd]
+keyboard_layout = true
+lock_keys = true
+offset_x = 20
+offset_y = 8
+orientation = "horizontal"
+position = "top_center"
+scale = 1.0
+
+[shell]
+avatar_path = "/home/milo/Pictures/GOOBERRRRRRR :D.jpg"
+clipboard_auto_paste = "ctrl_v"
+clipboard_enabled = true
+clipboard_history_max_entries = 100
+clipboard_image_action_command = ""
+corner_radius_scale = 1.0
+date_format = "%A, %x"
+font_family = "FiraMono Nerd Font"
+launch_apps_as_systemd_services = false
+middle_click_opens_widget_settings = true
+niri_overview_type_to_launch_enabled = false
+offline_mode = false
+password_style = "random"
+polkit_agent = true
+screen_time_enabled = false
+settings_show_advanced = true
+show_location = true
+telemetry_enabled = true
+time_format = "{:%H:%M}"
+ui_scale = 1.0
+
+    [shell.animation]
+    enabled = true
+    speed = 1.0
+
+    [shell.mpris]
+    blacklist = []
+
+    [shell.panel]
+    background_blur = true
+    borders = true
+    clipboard_placement = "attached"
+    control_center_placement = "attached"
+    launcher_categories = false
+    launcher_placement = "centered"
+    open_near_click_clipboard = false
+    open_near_click_control_center = false
+    open_near_click_launcher = true
+    open_near_click_session = false
+    open_near_click_wallpaper = false
+    session_placement = "centered"
+    shadow = true
+    transparency_mode = "solid"
+    wallpaper_placement = "attached"
+
+    [shell.screen_corners]
+    enabled = false
+    size = 32
+
+    [[shell.session.actions]]
+    action = "lock"
+    command = ""
+    enabled = true
+    glyph = ""
+    label = ""
+    shortcut = "1"
+    variant = "primary"
+
+    [[shell.session.actions]]
+    action = "logout"
+    command = ""
+    enabled = true
+    glyph = ""
+    label = ""
+    shortcut = "2"
+    variant = "primary"
+
+    [[shell.session.actions]]
+    action = "suspend"
+    command = ""
+    enabled = true
+    glyph = ""
+    label = ""
+    shortcut = "3"
+    variant = "primary"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    command = ""
+    enabled = true
+    glyph = ""
+    label = ""
+    shortcut = "4"
+    variant = "destructive"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    command = ""
+    enabled = true
+    glyph = ""
+    label = ""
+    shortcut = "5"
+    variant = "destructive"
+
+    [[shell.session.actions]]
+    action = "command"
+    command = "systemctl reboot --firmware-setup"
+    enabled = true
+    glyph = "adjustments"
+    label = "Reboot to UEFI"
+    shortcut = "6"
+    variant = "destructive"
+
+    [shell.shadow]
+    alpha = 0.55000001192092896
+    blur = 12
+    offset_x = 0
+    offset_y = 6
+
+[system.monitor]
+cpu_poll_seconds = 2.0
+disk_poll_seconds = 10.0
+enabled = true
+gpu_poll_seconds = 5.0
+memory_poll_seconds = 2.0
+network_poll_seconds = 3.0
+
+[theme]
+builtin = "Nord"
+community_palette = "Oxocarbon"
+custom_palette = ""
+mode = "dark"
+source = "builtin"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "qt", "kcolorscheme", "niri", "btop" ]
+    community_ids = [ "zed", "yazi", "vicinae", "steam" ]
+    enable_builtin_templates = true
+    enable_community_templates = true
+
+[wallpaper]
+directory = "/home/milo/Pictures/Wallpapers"
+directory_dark = ""
+directory_light = ""
+edge_smoothness = 0.30000001192092896
+enabled = true
+fill_color = ""
+fill_mode = "crop"
+per_monitor_directories = false
+transition = [ "fade", "wipe", "disc", "stripes", "zoom", "honeycomb" ]
+transition_duration = 1500.0
+
+    [wallpaper.automation]
+    enabled = true
+    interval_minutes = 60
+    order = "random"
+    recursive = true
+
+[weather]
+address = "Keighley, United Kingdom"
+auto_locate = false
+effects = true
+enabled = true
+refresh_minutes = 30
+unit = "metric"
+
+[widget.active_window]
+icon_size = 14.0
+max_length = 800.0
+min_length = 80.0
+title_scroll = "none"
+type = "active_window"
+
+[widget.bongocat]
+audio_spectrum = true
+script = "scripts/bongocat.lua"
+type = "scripted"
+
+[widget.brightness]
+show_label = false
+type = "brightness"
+
+[widget.clock]
+format = "%H:%M %dth %b"
+type = "clock"
+
+[widget.control-center]
+capsule = true
+capsule_border = "primary"
+glyph = "menu-4"
+type = "control-center"
+
+[widget.cpu]
+display = "text"
+stat = "cpu_usage"
+type = "sysmon"
+
+[widget.date]
+format = "{:%a %d %b}"
+type = "clock"
+
+[widget.input_volume]
+device = "input"
+type = "volume"
+
+[widget.keyboard_layout]
+cycle_command = ""
+type = "keyboard_layout"
+
+[widget.lock_keys]
+display = "short"
+hide_when_off = false
+show_caps_lock = true
+show_num_lock = true
+show_scroll_lock = false
+type = "lock_keys"
+
+[widget.media]
+art_size = 16.0
+max_length = 220.0
+min_length = 80.0
+title_scroll = "none"
+type = "media"
+
+[widget.network]
+show_label = false
+type = "network"
+
+[widget.network_rx]
+stat = "net_rx"
+type = "sysmon"
+
+[widget.network_tx]
+stat = "net_tx"
+type = "sysmon"
+
+[widget.notifications]
+capsule_border = "primary"
+type = "notifications"
+
+[widget.output_volume]
+device = "output"
+type = "volume"
+
+[widget.ram]
+display = "text"
+stat = "ram_used"
+type = "sysmon"
+
+[widget.session]
+capsule = true
+capsule_border = "primary"
+type = "session"
+
+[widget.spacer]
+type = "spacer"
+
+[widget.sysmon]
+display = "text"
+stat = "cpu_usage"
+type = "sysmon"
+
+[widget.temp]
+display = "text"
+stat = "cpu_temp"
+type = "sysmon"
+
+[widget.tray]
+capsule_border = "primary"
+drawer = true
+drawer_columns = 5
+type = "tray"
